@@ -15,7 +15,6 @@
   .logo-container {
     position: absolute; /* Make the logo absolutely positioned */
     left: 0rem;
-    transform: translateX(-800%);
     flex-shrink: 0; /* Prevents logo from shrinking */
   }
   
@@ -25,7 +24,7 @@
     height: auto;
   }
   
-  /* Navbar list (menu items) */
+  /* Navbar list */
   .navbar-list {
     list-style: none;
     display: flex;
