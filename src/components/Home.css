@@ -1,31 +1,74 @@
 @keyframes fadeIn {
     from {
-        opacity: 0;
-        transform: translateY(20px);
+      opacity: 0;
+      transform: translateY(20px);
     }
     to {
-        opacity: 1;
-        transform: translateY(0);
+      opacity: 1;
+      transform: translateY(0);
     }
-}
-.matrix { 
+  }
+  
+  .matrix {
     display: grid;
     grid-template-columns: repeat(9, 150px); /* 9 equal columns */
     grid-template-rows: repeat(7, 100px); /* 7 equal rows */
     gap: 0.8px;
-}
-
-.line {
+    opacity: 0; /* Start hidden */
+    transition: opacity 0.5s ease; /* Smooth transition for opacity */
+  }
+  
+  .matrix.fade-in {
+    opacity: 1; /* Fade in when visible */
+    animation: fadeIn 0.5s ease forwards; /* Add animation */
+  }
+  
+  .line {
     width: 150px;
     height: 100px;
-    border-left: 0.8px solid rgba(255, 255, 255, 0.2)
-;
-    border-top: 0.8px solid rgba(255, 255, 255, 0.2)
-;
-animation: fadeIn 0.6s ease forwards; /* Fade-in effect */
-opacity: 0; /* Start hidden */
-animation-delay: calc(var(--index) * 0.1s);
-}
+    border-left: 0.8px solid rgba(255, 255, 255, 0.2);
+    border-top: 0.8px solid rgba(255, 255, 255, 0.2);
+    animation: fadeIn 0.6s ease forwards; /* Fade-in effect */
+    opacity: 0; /* Start hidden */
+    animation-delay: calc(var(--index) * 0.1s); /* Use the CSS variable */
+  }
+  
+  /* Add right border to last column */
+  .line:nth-child(n) {
+    border-right: 0.8px solid rgba(255, 255, 255, 0.2);
+  }
+  
+  /* Add bottom border to last row */
+  .line:nth-child(n + 1) {
+    border-bottom: 0.8px solid rgba(255, 255, 255, 0.2);
+  }
+  
+  /* Special cell styling */
+  .special-cell {
+    border: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    font-weight: bold;
+    color: #ccc;
+    grid-column: span 7; /* Spans 7 columns */
+    grid-row: span 3; /* Spans 3 rows */
+    text-align: center;
+    animation: fadeIn 0.5s ease forwards;
+    opacity: 0; /* Start hidden */
+    transform: scale(0.9); /* Start slightly smaller */
+    animation-delay: 0.6s;
+  }
+  
+  /* Fade-in effect for lines */
+  .line {
+    animation: fadeIn 0.5s ease forwards; /* Fade-in effect */
+    opacity: 0; /* Start hidden */
+  }
+  
+ 
 
 /* Add right border to last column */
 .line:nth-child(n) {
@@ -70,7 +113,7 @@ animation-delay: calc(var(--index) * 0.1s);
 .line:nth-child(n) {
     --index: calc(var(--index) + 1); /* Increment index for staggered effect */}
 
-a:hover{
+button a:hover,.special-cell button:hover{
     color: #242424; /* Change text color */
 }
 .sparkle-container {
