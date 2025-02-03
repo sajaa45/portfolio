@@ -5,14 +5,27 @@
 }
 
 .description {
-    margin-top: -80px;
-    margin-left: -100px;
-    flex: 0 1 60%; /* Allow it to grow but limit its maximum width */
-    padding: 20px;
+    margin-right: 50px;;
     opacity: 0; /* Start hidden */
-    animation: slideInLeft 0.8s forwards; /* Apply animation */
-}
-
+    transform: translateX(-100%); /* Start off-screen */
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+  
+  .description.animate {
+    opacity: 1; /* Fade in */
+    transform: translateX(0); /* Slide in */
+  }
+  
+  .image-container {
+    opacity: 0; /* Start hidden */
+    transform: translateX(100%); /* Start off-screen */
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+  
+  .image-container.animate {
+    opacity: 1; /* Fade in */
+    transform: translateX(0); /* Slide in */
+  }
 .about-me-container .description p {
     font-size: 23px;
     
@@ -23,11 +36,7 @@
 }
 .about-me-container .description h2 {
     margin-bottom: -5px;
-}
-.image-container {
-    flex: 0 0 auto; /* Prevent stretching */
-    opacity: 0; /* Start hidden */
-    animation: slideInRight 0.8s forwards; /* Apply animation */
+    margin-left: -100px;
 }
 
 .border-wrapper {

@@ -1,9 +1,22 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./App.css";
 import AboutMe from "./components/AboutMe";
 import Home from "./components/Home";
 import Navbar from "./components/Navbar";
 const App: React.FC = () => {
+  useEffect(() => {
+    const handleContextMenu = (event: MouseEvent) => {
+      event.preventDefault(); // Prevent the context menu from appearing
+    };
+
+    // Add event listener to the document
+    document.addEventListener("contextmenu", handleContextMenu);
+
+    // Cleanup the event listener on component unmount
+    return () => {
+      document.removeEventListener("contextmenu", handleContextMenu);
+    };
+  }, []);
   return (
     <div className="App">
       <Navbar />

@@ -1,15 +1,44 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "./AboutMe.css";
 
 const AboutMe: React.FC = () => {
   const [animate, setAnimate] = useState(false);
+  const aboutMeRef = useRef<HTMLDivElement>(null);
+
+  // Prevent default drag behavior
+  const handleDragStart = (event: React.DragEvent) => {
+    event.preventDefault();
+  };
 
   useEffect(() => {
-    setAnimate(true);
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setAnimate(true); // Trigger animation when in view
+          } else {
+            setAnimate(false); // Reset animation state when out of view
+          }
+        });
+      },
+      {
+        threshold: 0.5, // Trigger when 50% of the element is visible
+      }
+    );
+
+    if (aboutMeRef.current) {
+      observer.observe(aboutMeRef.current);
+    }
+
+    return () => {
+      if (aboutMeRef.current) {
+        observer.unobserve(aboutMeRef.current);
+      }
+    };
   }, []);
 
   return (
-    <div className={`about-me-container ${animate ? "animate" : ""}`}>
+    <div ref={aboutMeRef} className={`about-me-container ${animate ? "animate" : ""}`}>
       <div className={`description ${animate ? "animate" : ""}`}>
         <h2>About Me</h2>
         <p>
@@ -21,13 +50,20 @@ const AboutMe: React.FC = () => {
         </p>
         <div className="education">
           <p>
-            Education: Junior with a major in Information Technology and a minor in Business Analytics at  {" "}
-              <a href="https://tunis-business-school.tn" target="_blank" rel="noopener noreferrer">Tunis Business School ↗</a>
+            Education: Junior with a major in Information Technology and a minor in Business Analytics at {" "}
+            <a
+              href="https://tunis-business-school.tn"
+              target="_blank"
+              rel="noopener noreferrer"
+              onDragStart={handleDragStart} // Prevent dragging the link
+            >
+              Tunis Business School ↗
+            </a>
           </p>
         </div>
         <button>
-                  <a href="#contact">Contact Me</a>
-                </button>
+          <a href="#contact">Contact Me</a>
+        </button>
       </div>
       <div className={`image-container ${animate ? "animate" : ""}`}>
         <div className="border-wrapper">
@@ -35,6 +71,7 @@ const AboutMe: React.FC = () => {
             src="src/components/potfolio pic.jpeg"
             alt="About Me"
             className="about-me-image"
+            onDragStart={handleDragStart} // Prevent dragging the image
           />
         </div>
       </div>

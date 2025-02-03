@@ -11,6 +11,11 @@ const Home: React.FC<HomeProps> = ({ rows, cols }) => {
   const [isVisible, setIsVisible] = useState(false);
   const homeRef = useRef<HTMLDivElement>(null);
 
+  // Prevent default drag behavior
+  const handleDragStart = (event: React.DragEvent) => {
+    event.preventDefault();
+  };
+
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -53,20 +58,22 @@ const Home: React.FC<HomeProps> = ({ rows, cols }) => {
                   <img
                     src="src/components/sparkle.png" // Use forward slashes for paths
                     alt="Sparkle"
-                    className="sparkle-icon"
+                    className="sparkle-icon sparkle-icon1"
+                    onDragStart={handleDragStart} // Prevent dragging the sparkle icon
                   />
                 </div>
                 Hi, this is my personal portfolio.
                 <br />
                 Get to know more about me
                 <button>
-                  <a href="#about">About Me</a>
+                  <a href="#about" onDragStart={handleDragStart}>About Me</a> {/* Prevent dragging the link */}
                 </button>
                 <div className="sparkle-container2">
                   <img
                     src="src/components/sparkle.png" // Use forward slashes for paths
                     alt="Sparkle"
-                    className="sparkle-icon"
+                    className="sparkle-icon sparkle-icon2"
+                    onDragStart={handleDragStart} // Prevent dragging the sparkle icon
                   />
                 </div>
               </div>
