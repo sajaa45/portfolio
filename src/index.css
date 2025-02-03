@@ -28,7 +28,7 @@ body {
   user-select: none;
   min-width: 320px;
   min-height: 100vh;
-  cursor: url('src/cursor (4).png'), auto;
+  cursor: url('src/cursor.png'), auto;
   overflow-x: hidden; /* Prevent horizontal scrollbar */
   box-sizing: border-box; /* Include padding and border in element's total width and height */
 }
@@ -53,7 +53,7 @@ button {
   transition: transform 0.2s ease-in-out, background-position 1s ease-in-out, color 1s ease-in-out, box-shadow 0.3s ease; /* Smooth transition */
   margin-top: 10px; /* Add space between text and button */
   
-  cursor: url('src/cursor (4).png'), pointer;
+  cursor: url('src/cursor.png'), pointer;
 }
 
 /* Enhanced hover effect */
