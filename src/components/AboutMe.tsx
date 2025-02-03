@@ -40,7 +40,14 @@ const AboutMe: React.FC = () => {
   return (
     <div ref={aboutMeRef} className={`about-me-container ${animate ? "animate" : ""}`}>
       <div className={`description ${animate ? "animate" : ""}`}>
-        <h2>About Me</h2>
+      <div className="title-container">
+      
+        <h2>About Me</h2><img
+            src="src/components/stars.png" // Path to your start.png image
+            alt="Star"
+            className="star-image"
+            onDragStart={handleDragStart} // Prevent dragging the image
+          /></div>
         <p>
           My name is Saja Moussa, I’m a passionate student and coding enthusiast currently diving
           into full-stack development, where I’m building web applications and

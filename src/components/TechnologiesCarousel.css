@@ -85,3 +85,10 @@
   .carousel-item:not(.active) {
     opacity: 0.5; /* Non-active items are slightly faded */
   }
+  .carousel-arrow.active {
+    background-color: rgba(0, 0, 0, 0.7); /* Darken background on hover */
+    color: #c62e9b; /* Change color on hover */
+    border: 1px solid #c62e9b;
+    transform: scale(0.9); /* Slightly shrink the button */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Add a shadow for a pressed effect */
+  }
