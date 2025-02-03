@@ -1,6 +1,6 @@
+import star from '..stars.png';
 import React, { useEffect, useRef, useState } from "react";
 import "./AboutMe.css";
-
 const AboutMe: React.FC = () => {
   const [animate, setAnimate] = useState(false);
   const aboutMeRef = useRef<HTMLDivElement>(null);
@@ -43,7 +43,7 @@ const AboutMe: React.FC = () => {
       <div className="title-container">
       
         <h2>About Me</h2><img
-            src="stars.png" // Path to your start.png image
+            src={star} // Path to your start.png image
             alt="Star"
             className="star-image"
             onDragStart={handleDragStart} // Prevent dragging the image
