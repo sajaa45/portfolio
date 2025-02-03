@@ -5,6 +5,7 @@
 }
 
 .description {
+    color:#ccc;
     margin-right: 50px;;
     opacity: 0; /* Start hidden */
     transform: translateX(-100%); /* Start off-screen */

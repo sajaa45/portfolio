@@ -3,6 +3,7 @@ import "./App.css";
 import AboutMe from "./components/AboutMe";
 import Home from "./components/Home";
 import Navbar from "./components/Navbar";
+import TechnologiesCarousel from "./components/TechnologiesCarousel";
 const App: React.FC = () => {
   useEffect(() => {
     const handleContextMenu = (event: MouseEvent) => {
@@ -25,6 +26,9 @@ const App: React.FC = () => {
       </section>
       <section id="about" className="section">
         <AboutMe />
+      </section>
+      <section id="technologies" className="section">
+        <TechnologiesCarousel />
       </section>
       <section id="projects" className="section">
         Projects Section

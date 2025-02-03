@@ -28,7 +28,13 @@ body {
   user-select: none;
   min-width: 320px;
   min-height: 100vh;
-  cursor: url('src/cursor (4).png') , auto;
+  cursor: url('src/cursor (4).png'), auto;
+  overflow-x: hidden; /* Prevent horizontal scrollbar */
+  box-sizing: border-box; /* Include padding and border in element's total width and height */
+}
+
+* {
+  box-sizing: inherit; /* Inherit box-sizing from body */
 }
 
 h1 {

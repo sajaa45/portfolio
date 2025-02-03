@@ -1,0 +1,71 @@
+.technologies-carousel {
+    width: 100%; /* Set the width of the carousel */
+    overflow: hidden; /* Hide overflow to prevent showing items outside the view */
+    color:#ccc;
+}
+  .carousel-container {
+    display: flex;
+    align-items: center;
+  }
+  
+  .carousel {
+    display: flex;
+    transition: transform 0.5s ease; /* Smooth sliding animation */
+  }
+  
+  .carousel-item {
+    flex: 0 0 auto;
+    width: 150px; /* Set a fixed width for each item */
+    margin: 0 10px; /* Space between items */
+    text-align: center;
+    opacity: 0.5; /* Dim inactive items */
+  }
+  
+  .carousel-item.active {
+    opacity: 1; /* Highlight the active item */
+  }
+  
+  .tech-image {
+    width: 100px; /* Make the image responsive */
+    height: auto; /* Maintain aspect ratio */
+  }
+  
+  .carousel-arrow {
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    border: 1px solid;
+    font-size: 2rem;
+    cursor: pointer;
+    color: rgba(255, 255, 255, 0.7);; /* Arrow color */
+    transition: background-color 0.3s ease, color 0.3s ease;
+    padding: 10px; /* Add padding for better clickability */
+    border-radius: 50%; /* Make the arrows circular */
+    width: 40px; /* Set a fixed width */
+    height: 40px; /* Set a fixed height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .carousel-arrow:hover {
+    background-color: rgba(0, 0, 0, 0.7); /* Darken background on hover */
+    color: #c62e9b; /* Change color on hover */
+    border: 1px solid #c62e9b;
+  }
+  
+  .carousel-arrow.left {
+    position: absolute;
+    left: 70px; 
+  }
+  
+  .carousel-arrow.right {
+    position: absolute;
+    right: 50px;
+  }
+  .active {
+    opacity: 1; /* Active item is fully visible */
+  }
+  
+  .carousel-item:not(.active) {
+    opacity: 0.5; /* Non-active items are slightly faded */
+    
+  }
