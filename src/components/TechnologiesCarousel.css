@@ -1,11 +1,27 @@
-.technologies-carousel {
+.carousel-wrapper {
+    position: relative; /* Ensure arrows are positioned relative to this container */
+    overflow: hidden; 
+  }
+  
+  .technologies-carousel {
     width: 100%; /* Set the width of the carousel */
     overflow: hidden; /* Hide overflow to prevent showing items outside the view */
-    color:#ccc;
-}
+    color: #ccc;
+    opacity: 0; /* Start with the component invisible */
+    transform: translateY(20px); /* Start slightly below its final position */
+    transition: opacity 0.8s ease, transform 0.8s ease; /* Smooth transition */
+  }
+  
+  .technologies-carousel.animate {
+    opacity: 1; /* Fade in */
+    transform: translateY(0); /* Move to its final position */
+  }
+  
   .carousel-container {
     display: flex;
     align-items: center;
+    max-width: 80%; /* Limit the width of the carousel container */
+    margin: 0 auto; /* Center the container */
   }
   
   .carousel {
@@ -35,7 +51,7 @@
     border: 1px solid;
     font-size: 2rem;
     cursor: pointer;
-    color: rgba(255, 255, 255, 0.7);; /* Arrow color */
+    color: rgba(255, 255, 255, 0.7); /* Arrow color */
     transition: background-color 0.3s ease, color 0.3s ease;
     padding: 10px; /* Add padding for better clickability */
     border-radius: 50%; /* Make the arrows circular */
@@ -44,6 +60,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    position: absolute; /* Position arrows absolutely within the carousel-wrapper */
+    top: 50%; /* Center vertically */
   }
   
   .carousel-arrow:hover {
@@ -53,19 +71,17 @@
   }
   
   .carousel-arrow.left {
-    position: absolute;
-    left: 70px; 
+    left: 10px; /* Position the left arrow */
   }
   
   .carousel-arrow.right {
-    position: absolute;
-    right: 50px;
+    right: 10px; /* Position the right arrow */
   }
+  
   .active {
     opacity: 1; /* Active item is fully visible */
   }
   
   .carousel-item:not(.active) {
     opacity: 0.5; /* Non-active items are slightly faded */
-    
   }

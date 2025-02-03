@@ -21,7 +21,9 @@ const technologies = [
 
 const TechnologiesCarousel: React.FC = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [animate, setAnimate] = useState(false); // State for animation
   const carouselRef = useRef<HTMLDivElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
 
   const handlePrev = () => {
     setCurrentIndex((prevIndex) =>
@@ -43,33 +45,62 @@ const TechnologiesCarousel: React.FC = () => {
     }
   }, [currentIndex]);
 
+  // Effect to trigger animation when the carousel comes into view
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setAnimate(true); // Trigger animation when in view
+          } else {
+            setAnimate(false); // Reset animation state when out of view
+          }
+        });
+      },
+      {
+        threshold: 0.5, // Trigger when 50% of the element is visible
+      }
+    );
+
+    if (containerRef.current) {
+      observer.observe(containerRef.current);
+    }
+
+    return () => {
+      if (containerRef.current) {
+        observer.unobserve(containerRef.current);
+      }
+    };
+  }, []);
+
   return (
-    <div className="technologies-carousel">
-      <hr />
-      <h3>Technologies And Tools</h3>
-      <div className="carousel-container">
-        <button className="carousel-arrow left" onClick={handlePrev}>
-          &lt;
-        </button>
-        <div className="carousel" ref={carouselRef}>
-          {technologies.map((tech, index) => (
-            <div
-              className={`carousel-item ${
-                index === currentIndex ? "active" : ""
-              }`}
-              key={index}
-            >
-              <img src={tech.image} alt={tech.name} className="tech-image" />
-              <p>{tech.name}</p>
-            </div>
-          ))}
-        </div>
-        <button className="carousel-arrow right" onClick={handleNext}>
-          &gt;
-        </button>
+    
+      <div className="carousel-wrapper">
+  <div ref={containerRef} className={`technologies-carousel ${animate ? "animate" : ""}`}>
+    <hr />
+    <h3>Technologies And Tools</h3>
+    <div className="carousel-container">
+      <div className="carousel" ref={carouselRef}>
+        {technologies.map((tech, index) => (
+          <div
+            className={`carousel-item ${index === currentIndex ? "active" : ""}`}
+            key={index}
+          >
+            <img src={tech.image} alt={tech.name} className="tech-image" />
+            <p>{tech.name}</p>
+          </div>
+        ))}
       </div>
-      <hr />
     </div>
+    <hr />
+  </div>
+  <button className="carousel-arrow left" onClick={handlePrev}>
+    &lt;
+  </button>
+  <button className="carousel-arrow right" onClick={handleNext}>
+    &gt;
+  </button>
+</div>
   );
 };
 
