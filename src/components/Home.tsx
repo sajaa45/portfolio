@@ -19,10 +19,26 @@ const Home: React.FC<HomeProps> = ({ rows, cols }) => {
           if (rowIndex === 2 && colIndex === 1) {
             return (
               <div key={`${rowIndex}-${colIndex}`} className="special-cell">
+                <div className="sparkle-container">
+                  <img
+                    src="src\components\sparkle.png"
+                    alt="Sparkle"
+                    className="sparkle-icon"
+                  />
+                </div>
                 Hi, this is my personal portfoli.
                 <br />
                 Get to know more about me
-                <button>About Me</button>
+                <button>
+                  <a href="#about">About Me</a>
+                </button>
+                <div className="sparkle-container2">
+                  <img
+                    src="src\components\sparkle.png"
+                    alt="Sparkle"
+                    className="sparkle-icon"
+                  />
+                </div>
               </div>
             );
           }

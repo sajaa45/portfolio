@@ -1,3 +1,13 @@
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 .matrix { 
     display: grid;
     grid-template-columns: repeat(9, 150px); /* 9 equal columns */
@@ -12,6 +22,9 @@
 ;
     border-top: 0.8px solid rgba(255, 255, 255, 0.2)
 ;
+animation: fadeIn 0.6s ease forwards; /* Fade-in effect */
+opacity: 0; /* Start hidden */
+animation-delay: calc(var(--index) * 0.1s);
 }
 
 /* Add right border to last column */
@@ -39,22 +52,50 @@
     grid-column: span 7; /* Spans 7 columns */
     grid-row: span 3; /* Spans 3 rows */
     text-align: center;
+    animation: fadeIn 0.5s ease forwards;
+    opacity: 0; /* Start hidden */
+    transform: scale(0.9); /* Start slightly smaller */
+    animation-delay: 0.6s;
 }
 
-button {
-    padding: 10px 20px;
-    border-radius: 50px;
-    background: linear-gradient(to left, #90186E, #EFA3C5); /* Original gradient */
-    font-size: 1.1rem;
-    color: white;
-    border: 1px solid #ccc;
-    cursor: pointer;
-    transition: transform 0.2s ease-in-out, background 0.5s ease-in-out; /* Transition for background */
-    margin-top: 10px; /* Add space between text and button */
+
+
+/* Fade-in effect for lines */
+.line {
+    animation: fadeIn 0.5s ease forwards; /* Fade-in effect */
+    opacity: 0; /* Start hidden */
 }
 
-/* Hover effect - reverse the gradient colors */
-button:hover {
-    background: linear-gradient(to left,  #90186E,#A3337F); 
-}
+/* Staggered animation for lines */
+.line:nth-child(n) {
+    --index: calc(var(--index) + 1); /* Increment index for staggered effect */}
 
+a:hover{
+    color: #242424; /* Change text color */
+}
+.sparkle-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    height: 100vh; /* Center the icon vertically */
+  }
+  .sparkle-container2 {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    height: 100vh; /* Center the icon vertically */
+  }
+  
+  .sparkle-icon {
+    width: 50px; 
+    animation: pulse 1.5s infinite; /* Animation for size change */
+  }
+  
+  @keyframes pulse {
+    0%, 100% {
+      transform: scale(1); /* Original size */
+    }
+    50% {
+      transform: scale(1.2); /* Scale up */
+    }
+  }
