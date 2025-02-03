@@ -1,0 +1,85 @@
+.about-me-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.description {
+    margin-top: -80px;
+    margin-left: -100px;
+    flex: 0 1 60%; /* Allow it to grow but limit its maximum width */
+    padding: 20px;
+    opacity: 0; /* Start hidden */
+    animation: slideInLeft 0.8s forwards; /* Apply animation */
+}
+
+.about-me-container .description p {
+    font-size: 23px;
+    
+    text-align: left;
+}
+.about-me-container .description button{
+    margin-left: -600px;
+}
+.about-me-container .description h2 {
+    margin-bottom: -5px;
+}
+.image-container {
+    flex: 0 0 auto; /* Prevent stretching */
+    opacity: 0; /* Start hidden */
+    animation: slideInRight 0.8s forwards; /* Apply animation */
+}
+
+.border-wrapper {
+    width: 450px; /* Set the width of the border wrapper */
+    height: 448px; /* Set the height of the border wrapper */
+    border-radius: 100px;
+    background-image: linear-gradient(to right, #90186E, #EFA3C5); /* Apply gradient */
+    padding: 4px; /* Adjust padding to create space for the image */
+}
+
+.about-me-image {
+    width: 100%; /* Make the image fill the wrapper */
+    height: 100%; /* Ensure the image takes the full height */
+    border-radius: 100px; /* Match the border radius */
+    transition: transform 0.3s ease;
+}
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+.description .education p{
+    font-size: 20px;
+    color: #c62e9b;
+}
+
+.description .education p a{
+    text-decoration: underline;
+    font-style: italic;
+    color: #c62e9b;
+}
+.description .education p a:hover{
+    color: #EFA3C5;
+}
+/* Keyframes for animations */
+@keyframes slideInLeft {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInRight {
+    0% {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}

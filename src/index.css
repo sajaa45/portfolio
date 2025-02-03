@@ -27,6 +27,7 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  cursor: url('src/cursor (4).png') , auto;
 }
 
 h1 {
@@ -42,9 +43,10 @@ button {
   background-position: right; /* Start position */
   font-size: 1.1rem;
   color: rgba(255, 255, 255, 0.7);
-  cursor: pointer;
   transition: transform 0.2s ease-in-out, background-position 1s ease-in-out, color 1s ease-in-out, box-shadow 0.3s ease; /* Smooth transition */
   margin-top: 10px; /* Add space between text and button */
+  
+  cursor: url('src/cursor (4).png'), pointer;
 }
 
 /* Enhanced hover effect */
