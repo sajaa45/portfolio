@@ -2,20 +2,20 @@ import React, { useEffect, useRef, useState } from "react";
 import "./TechnologiesCarousel.css"; // Import your CSS file
 
 const technologies = [
-  { name: "React", image: "src/components/tools/physics.png" },
-  { name: "Node.js", image: "src/components/tools/node-js-svgrepo-com.png" },
-  { name: "Python", image: "src/components/tools/python.png" },
-  { name: "JavaScript", image: "src/components/tools/js.png" },
-  { name: "CSS", image: "src/components/tools/css-3-svgrepo-com.png" },
-  { name: "Java", image: "src/components/tools/java.png" },
-  { name: "Postman", image: "src/components/tools/postman-icon-svgrepo-com.png" },
-  { name: "Angular", image: "src/components/tools/angular-icon-svgrepo-com.png" },
-  { name: "HTML", image: "src/components/tools/html.png" },
-  { name: "Docker", image: "src/components/tools/docker-svgrepo-com.png" },
-  { name: "Linux", image: "src/components/tools/linux-svgrepo-com.png" },
-  { name: "Jupyter", image: "src/components/tools/jupyter-svgrepo-com.png" },
-  { name: "MySQL", image: "src/components/tools/mysql-logo-svgrepo-com.png" },
-  { name: "MongoDB", image: "src/components/tools/mongo-svgrepo-com.png" }
+  { name: "React", image: "tools/physics.png" },
+  { name: "Node.js", image: "tools/node-js-svgrepo-com.png" },
+  { name: "Python", image: "tools/python.png" },
+  { name: "JavaScript", image: "tools/js.png" },
+  { name: "CSS", image: "tools/css-3-svgrepo-com.png" },
+  { name: "Java", image: "tools/java.png" },
+  { name: "Postman", image: "tools/postman-icon-svgrepo-com.png" },
+  { name: "Angular", image: "tools/angular-icon-svgrepo-com.png" },
+  { name: "HTML", image: "tools/html.png" },
+  { name: "Docker", image: "tools/docker-svgrepo-com.png" },
+  { name: "Linux", image: "tools/linux-svgrepo-com.png" },
+  { name: "Jupyter", image: "tools/jupyter-svgrepo-com.png" },
+  { name: "MySQL", image: "tools/mysql-logo-svgrepo-com.png" },
+  { name: "MongoDB", image: "tools/mongo-svgrepo-com.png" }
   // Add more technologies as needed
 ];
 

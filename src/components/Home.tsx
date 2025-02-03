@@ -56,7 +56,7 @@ const Home: React.FC<HomeProps> = ({ rows, cols }) => {
               <div key={`${rowIndex}-${colIndex}`} className="special-cell">
                 <div className="sparkle-container">
                   <img
-                    src="src/components/sparkle.png" // Use forward slashes for paths
+                    src="sparkle.png" // Use forward slashes for paths
                     alt="Sparkle"
                     className="sparkle-icon sparkle-icon1"
                     onDragStart={handleDragStart} // Prevent dragging the sparkle icon
@@ -70,7 +70,7 @@ const Home: React.FC<HomeProps> = ({ rows, cols }) => {
                 </button>
                 <div className="sparkle-container2">
                   <img
-                    src="src/components/sparkle.png" // Use forward slashes for paths
+                    src="sparkle.png" // Use forward slashes for paths
                     alt="Sparkle"
                     className="sparkle-icon sparkle-icon2"
                     onDragStart={handleDragStart} // Prevent dragging the sparkle icon

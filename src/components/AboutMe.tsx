@@ -43,7 +43,7 @@ const AboutMe: React.FC = () => {
       <div className="title-container">
       
         <h2>About Me</h2><img
-            src="src/components/stars.png" // Path to your start.png image
+            src="stars.png" // Path to your start.png image
             alt="Star"
             className="star-image"
             onDragStart={handleDragStart} // Prevent dragging the image
@@ -75,7 +75,7 @@ const AboutMe: React.FC = () => {
       <div className={`image-container ${animate ? "animate" : ""}`}>
         <div className="border-wrapper">
           <img
-            src="src/components/potfolio pic.jpeg"
+            src="potfolio pic.jpeg"
             alt="About Me"
             className="about-me-image"
             onDragStart={handleDragStart} // Prevent dragging the image
