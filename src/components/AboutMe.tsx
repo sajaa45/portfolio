@@ -1,5 +1,5 @@
-import star from '..stars.png';
 import React, { useEffect, useRef, useState } from "react";
+import star from '../../stars.png';
 import "./AboutMe.css";
 const AboutMe: React.FC = () => {
   const [animate, setAnimate] = useState(false);
