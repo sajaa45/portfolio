@@ -111,3 +111,36 @@ body {
         opacity: 1;
     }
 }
+/* Media Queries for Smaller Devices */
+@media (max-width: 768px) {
+    .about-me-container {
+        flex-direction: column; /* Stack items vertically */
+        align-items: center; /* Center items */
+    }
+
+    .description {
+        margin-right: 0; /* Remove right margin */
+        text-align: center; /* Center text */
+        margin-bottom: 20px; /* Add space below */
+    }
+
+    .about-me-container .description h2 {
+        margin-left: 0; /* Remove left margin */
+    }
+
+    .about-me-container .description button {
+        margin-left: 0; /* Remove left margin */
+    }
+
+    .border-wrapper {
+        width: 100%; /* Make the border wrapper full width */
+        height: auto; /* Adjust height automatically */
+        max-width: 450px; /* Set a max width */
+    }
+
+    .star-image {
+        width: 30px; /* Adjust size for smaller screens */
+    }
+
+    
+}

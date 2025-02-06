@@ -1,89 +1,103 @@
 /* Navbar container */
 .navbar {
-    display: flex; /* Use flexbox for layout */
-    justify-content: center; /* Center the navbar list */
-    align-items: center; /* Center the items vertically */
-    background-color: transparent; /* Transparent background */
-    padding: 1rem 2rem;
-    position: sticky;
-    width: 100%;
-    top: 0;
-    z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  padding: 1rem 2rem;
+  position: sticky;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+}
+
+/* Logo container */
+.logo-container {
+  position: absolute;
+  left: 1rem;
+  flex-shrink: 0;
+}
+
+/* Logo styling */
+.logo {
+  width: 50px;
+  height: auto;
+}
+
+/* Navbar list */
+.navbar-list {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  padding: 10px;
+  border-radius: 50px;
+  background: linear-gradient(to right, #90186e, #efa3c5);
+  transform: translateX(-30px);
+}
+
+/* Navbar list items */
+.navbar-list li {
+  margin: 0 1.5rem;
+}
+
+/* Navbar links */
+.navbar-list a {
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+/* Hover effect on links */
+.navbar-list a:hover {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+/* Home icon styling */
+.home-icon {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 1.5rem;
+}
+
+.home-icon:hover {
+  color: #ffffff;
+}
+
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 0.5rem 1rem;
   }
-  
-  /* Logo container */
-  .logo-container {
-    position: absolute; /* Make the logo absolutely positioned */
-    left: 0rem;
-    flex-shrink: 0; /* Prevents logo from shrinking */
-  }
-  
-  /* Logo styling */
-  .logo {
-    width: 50px; /* Adjust the size of the logo */
-    height: auto;
-  }
-  
-  /* Navbar list */
-  .navbar-list {
-    list-style: none;
-    display: flex;
-    justify-content: center; /* Center the navbar items */
-    margin: 0;
-    padding: 10px;
-    border-radius: 50px;
-    background: linear-gradient(to right, #90186E, #EFA3C5);
-    transform: translateX(-30px);
-  }
-  
-  /* Navbar list items */
   .navbar-list li {
-    margin: 0 1.5rem;
+    margin: 0.5rem 10px;
   }
-  
-  /* Navbar links */
+
   .navbar-list a {
-    color: rgba(255, 255, 255, 0.7); /* Dark text color */
-    text-decoration: none;
-    font-size: 1.1rem;
-    font-weight: 500;
-    transition: color 0.3s ease;
+    font-size: 1rem;
   }
-  
-  /* Hover effect on links */
-  .navbar-list a:hover {
-    color: #FFFFFF; /* Hover color */
-    text-decoration: none;
+
+  .logo {
+    width: 40px; /* Adjust logo size for smaller screens */
   }
-  
-  /* Home icon styling */
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    padding: 0.5rem;
+  }
+
+  .navbar-list a {
+    font-size: 0.9rem; /* Further reduce font size */
+  }
+
   .home-icon {
-    color: rgba(255, 255, 255, 0.7);
-    font-size: 1.5rem; /* Optional: Adjust the size of the icon */
+    font-size: 1.2rem; /* Adjust home icon size */
   }
-  
-  .home-icon:hover {
-    color: #FFFFFF;
+  .navbar-list li:last-child {
+    display: none; /* Hides the last list item (Contact Me) */
   }
-  
-  /* Mobile view adjustments */
-  @media (max-width: 768px) {
-    .navbar {
-      flex-direction: column; /* Stack logo and menu vertically on mobile */
-      align-items: center; /* Center items */
-    }
-  
-    .logo-container {
-      margin-bottom: 10px; /* Space between logo and navbar list on mobile */
-    }
-  
-    .navbar-list {
-      flex-direction: column; /* Stack menu items vertically on mobile */
-      align-items: center; /* Center items */
-    }
-  
-    .navbar-list li {
-      margin: 10px 0; /* Adjust spacing for mobile */
-    }
-  }
-  
+}

@@ -38,3 +38,26 @@ html {
   color: white;
   padding: 2rem;
 }
+/* Responsive styles for tablets */
+@media (max-width: 768px) {
+  #root {
+    padding: 1rem; /* Reduce padding for tablets */
+  }
+
+  .section {
+    font-size: 1.5rem; /* Reduce font size for tablets */
+    padding: 1rem; /* Reduce padding for tablets */
+  }
+}
+
+/* Responsive styles for phones */
+@media (max-width: 480px) {
+  #root {
+    padding: 0.5rem; /* Further reduce padding for phones */
+  }
+
+  .section {
+    font-size: 1.2rem; /* Further reduce font size for phones */
+    padding: 0.5rem; /* Further reduce padding for phones */
+  }
+}

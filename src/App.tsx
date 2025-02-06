@@ -1,12 +1,12 @@
-import React, { useEffect } from "react";
+import React from "react";
 import "./App.css";
 import AboutMe from "./components/AboutMe";
 import Home from "./components/Home";
 import Navbar from "./components/Navbar";
 import TechnologiesCarousel from "./components/TechnologiesCarousel";
 const App: React.FC = () => {
-  useEffect(() => {
-    const handleContextMenu = (event: MouseEvent) => {
+   /*useEffect(() => {
+   const handleContextMenu = (event: MouseEvent) => {
       event.preventDefault(); // Prevent the context menu from appearing
     };
 
@@ -17,12 +17,12 @@ const App: React.FC = () => {
     return () => {
       document.removeEventListener("contextmenu", handleContextMenu);
     };
-  }, []);
+  }, []);*/
   return (
     <div className="App">
       <Navbar />
       <section id="home" className="section">
-        <Home rows={7} cols={9} />
+        <Home rows={7}  />
       </section>
       <section id="about" className="section">
         <AboutMe />

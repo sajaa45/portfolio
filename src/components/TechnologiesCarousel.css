@@ -92,3 +92,24 @@
     transform: scale(0.9); /* Slightly shrink the button */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Add a shadow for a pressed effect */
   }
+  @media (max-width: 768px) {
+    .carousel-container {
+        max-width: 100%; /* Allow the carousel to take full width */
+        padding: 0 1rem; /* Add some padding for smaller screens */
+    }
+
+    .carousel-item {
+        width: 120px; /* Adjust width for smaller screens */
+        margin: 0 5px; /* Reduce margin between items */
+    }
+
+    .carousel-arrow {
+        width: 30px; /* Reduce arrow size */
+        height: 30px; /* Reduce arrow size */
+        font-size: 1.5rem; /* Adjust font size for arrows */
+    }
+
+    .tech-image {
+        width: 80px; /* Adjust image size for smaller screens */
+    }
+}
