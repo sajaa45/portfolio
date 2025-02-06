@@ -29,7 +29,7 @@ body {
   min-width: 320px;
   min-height: 100vh;
   cursor: url('cursor.png'), auto;
-  overflow-x: auto; /* Prevent horizontal scrollbar (hidden*/
+  overflow-x: hidden; /* Prevent horizontal scrollbar (hidden*/
   box-sizing: border-box; /* Include padding and border in element's total width and height */
 }
 

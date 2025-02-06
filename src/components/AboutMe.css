@@ -2,65 +2,81 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap; /* Allow wrapping for smaller screens */
+    width: 100%; /* Ensure it takes full width */
+    max-width: 1200px; /* Optional: Set a max width for larger screens */
+    margin: 0 auto; /* Center the container */
 }
+
 .star-image {
     width: 40px; /* Adjust the size of the star image */
     height: auto; /* Maintain aspect ratio */
     animation: pulse2 1.5s infinite; 
-  }
+}
+
 .description {
-    color:#ccc;
-    margin-right: 50px;;
+    color: #ccc;
+    margin-right: 50px;
     opacity: 0; /* Start hidden */
     transform: translateX(-100%); /* Start off-screen */
     transition: opacity 0.8s ease, transform 0.8s ease;
-  }
-  @keyframes pulse2 {
+    flex: 1; /* Allow the description to grow */
+    min-width: 250px; /* Minimum width for smaller screens */
+}
+
+@keyframes pulse2 {
     0%,
     100% {
-      transform: scale(1); /* Original size */
+        transform: scale(1); /* Original size */
     }
     50% {
-      transform: scale(0.9); /* Scale down */
+        transform: scale(0.9); /* Scale down */
     }
-  }
-  .title-container {
+}
+
+.title-container {
     display: flex;
     align-items: center; /* Align the image and title vertically */
     justify-content: center;
     gap: 10px; /* Space between the image and title */
-  }
-  .description.animate {
+}
+
+.description.animate {
     opacity: 1; /* Fade in */
     transform: translateX(0); /* Slide in */
-  }
-  
-  .image-container {
+}
+
+.image-container {
     opacity: 0; /* Start hidden */
     transform: translateX(100%); /* Start off-screen */
     transition: opacity 0.8s ease, transform 0.8s ease;
-  }
-  
-  .image-container.animate {
+    flex: 1; /* Allow the image container to grow */
+    min-width: 250px; /* Minimum width for smaller screens */
+}
+
+.image-container.animate {
     opacity: 1; /* Fade in */
     transform: translateX(0); /* Slide in */
-  }
+}
+
 .about-me-container .description p {
     font-size: 23px;
-    
     text-align: left;
 }
-.about-me-container .description button{
-    margin-left: -600px;
+
+.about-me-container .description button {
+    margin-left: 0; /* Adjust margin for button */
 }
+
 .about-me-container .description h2 {
     margin-bottom: -5px;
-    margin-left: -100px;
+    margin-left: 0; /* Adjust margin for heading */
 }
 
 .border-wrapper {
-    width: 450px; /* Set the width of the border wrapper */
-    height: 448px; /* Set the height of the border wrapper */
+    width: 100%; /* Make the border wrapper responsive */
+    max-width: 450px; /* Set a max width for larger screens */
+    height: 450px; /* Allow height to adjust based on content */
     border-radius: 100px;
     background-image: linear-gradient(to right, #90186E, #EFA3C5); /* Apply gradient */
     padding: 4px; /* Adjust padding to create space for the image */
@@ -68,27 +84,30 @@
 
 .about-me-image {
     width: 100%; /* Make the image fill the wrapper */
-    height: 100%; /* Ensure the image takes the full height */
+    height: auto; /* Ensure the image takes the full height */
     border-radius: 100px; /* Match the border radius */
     transition: transform 0.3s ease;
 }
+
 body {
     font-family: 'Roboto', sans-serif;
 }
 
-.description .education p{
+.description .education p {
     font-size: 20px;
     color: #c62e9b;
 }
 
-.description .education p a{
+.description .education p a {
     text-decoration: underline;
     font-style: italic;
     color: #c62e9b;
 }
-.description .education p a:hover{
+
+.description .education p a:hover {
     color: #EFA3C5;
 }
+
 /* Keyframes for animations */
 @keyframes slideInLeft {
     0% {
@@ -111,36 +130,64 @@ body {
         opacity: 1;
     }
 }
-/* Media Queries for Smaller Devices */
+
+/* Responsive styles */
+@media (max-width: 1200px) {
+
+    .description {
+        margin-right: 0; /* Remove right margin */
+        text-align: center; /* Center text */
+    }
+
+    .border-wrapper {
+        margin-top: 20px;
+        width: 90%; /* Adjust width for medium screens */
+        max-width: 350px; /* Set a max width */
+        max-height: 350px;
+    }
+
+    .about-me-container .description p {
+        font-size: 20px; /* Adjust font size */
+    }
+}
+
 @media (max-width: 768px) {
+
+    .border-wrapper {
+        margin-top: 20px;
+        width: 90%; /* Adjust width for smaller screens */
+        max-width: 300px; /* Set a max width */
+        max-height: 300px;
+    }
+
+    .about-me-container .description p {
+        margin: 0 10px;
+        text-align: center;
+        font-size: 18px; /* Adjust font size */
+    }
+}
+
+@media (max-width: 480px) {
     .about-me-container {
         flex-direction: column; /* Stack items vertically */
         align-items: center; /* Center items */
     }
 
-    .description {
-        margin-right: 0; /* Remove right margin */
-        text-align: center; /* Center text */
-        margin-bottom: 20px; /* Add space below */
+    .border-wrapper {
+        border-radius: 105px;
+        margin-top: 20px;
+        width: 90%; /* Adjust width for very small screens */
+        max-width: 250px; /* Set a max width */
+        height: 225px;
+    }
+
+    .about-me-container .description p {
+        text-align: center;
+        margin: 10px 20px;
+        font-size: 16px; /* Adjust font size */
     }
 
     .about-me-container .description h2 {
-        margin-left: 0; /* Remove left margin */
+        font-size: 24px; /* Adjust heading size */
     }
-
-    .about-me-container .description button {
-        margin-left: 0; /* Remove left margin */
-    }
-
-    .border-wrapper {
-        width: 100%; /* Make the border wrapper full width */
-        height: auto; /* Adjust height automatically */
-        max-width: 450px; /* Set a max width */
-    }
-
-    .star-image {
-        width: 30px; /* Adjust size for smaller screens */
-    }
-
-    
 }

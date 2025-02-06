@@ -72,10 +72,6 @@ const Home: React.FC<HomeProps> = ({ rows }) => {
         const rowIndex = Math.floor(index / cols);
         const colIndex = index % cols;
 
-        // Check if the number of columns is as expected
-        if (index === 0) {
-          console.log(`Columns: ${cols}, Rows: ${rows}, Total Items: ${rows * cols}`);
-        }
 
         // Define the special area range
         if (cols > 3 && rowIndex > 1 && rowIndex < 5 && colIndex >= 1 && colIndex < cols - 1) {

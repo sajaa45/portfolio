@@ -1,6 +1,8 @@
 .carousel-wrapper {
     position: relative; /* Ensure arrows are positioned relative to this container */
     overflow: hidden; 
+    width: 100%; 
+    margin: 0 auto;
   }
   
   .technologies-carousel {
@@ -92,24 +94,21 @@
     transform: scale(0.9); /* Slightly shrink the button */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Add a shadow for a pressed effect */
   }
-  @media (max-width: 768px) {
-    .carousel-container {
-        max-width: 100%; /* Allow the carousel to take full width */
-        padding: 0 1rem; /* Add some padding for smaller screens */
-    }
+  /* Responsive styles */
+@media (max-width: 1200px) {
+  .carousel-wrapper {
+    max-width: 1200px;}
+}
 
-    .carousel-item {
-        width: 120px; /* Adjust width for smaller screens */
-        margin: 0 5px; /* Reduce margin between items */
-    }
+@media (max-width: 768px) {
+  .carousel-wrapper {
+    max-width: 768px;}
+  
+}
 
-    .carousel-arrow {
-        width: 30px; /* Reduce arrow size */
-        height: 30px; /* Reduce arrow size */
-        font-size: 1.5rem; /* Adjust font size for arrows */
-    }
+@media (max-width: 480px) {
+  .carousel-wrapper {
+    max-width: 470px;}
+ 
 
-    .tech-image {
-        width: 80px; /* Adjust image size for smaller screens */
-    }
 }
