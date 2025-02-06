@@ -62,6 +62,7 @@ const Home: React.FC<HomeProps> = ({ rows }) => {
   }, []);
 
   return (
+    <div className="parent-container">
     <div
       id="home"
       ref={homeRef}
@@ -167,7 +168,7 @@ const Home: React.FC<HomeProps> = ({ rows }) => {
           ></div>
         );
       })}
-    </div>
+    </div></div>
   );
 };
 

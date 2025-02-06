@@ -27,6 +27,7 @@ body {
   place-items: center;
   user-select: none;
   min-width: 320px;
+  touch-action: pan-x pan-y;
   min-height: 100vh;
   cursor: url('cursor.png'), auto;
   overflow-x: hidden; /* Prevent horizontal scrollbar (hidden*/

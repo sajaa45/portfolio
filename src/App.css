@@ -1,25 +1,15 @@
 #root {
-  max-width: 1280px;
+  width:100%;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
 }
 
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+* {
+  box-sizing: border-box; /* Include padding and border in element's total width and height */
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
+
 
 
 .read-the-docs {
@@ -33,30 +23,4 @@ html {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 2rem;
-  color: white;
-  padding: 2rem;
-}
-/* Responsive styles for tablets */
-@media (max-width: 768px) {
-  #root {
-    padding: 1rem; /* Reduce padding for tablets */
-  }
-
-  .section {
-    font-size: 1.5rem; /* Reduce font size for tablets */
-    padding: 1rem; /* Reduce padding for tablets */
-  }
-}
-
-/* Responsive styles for phones */
-@media (max-width: 480px) {
-  #root {
-    padding: 0.5rem; /* Further reduce padding for phones */
-  }
-
-  .section {
-    font-size: 1.2rem; /* Further reduce font size for phones */
-    padding: 0.5rem; /* Further reduce padding for phones */
-  }
 }

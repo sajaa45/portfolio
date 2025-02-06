@@ -22,7 +22,7 @@
   .carousel-container {
     display: flex;
     align-items: center;
-    max-width: 80%; /* Limit the width of the carousel container */
+    max-width: 90%; /* Limit the width of the carousel container */
     margin: 0 auto; /* Center the container */
   }
   
@@ -63,7 +63,7 @@
     align-items: center;
     justify-content: center;
     position: absolute; /* Position arrows absolutely within the carousel-wrapper */
-    top: 50%; /* Center vertically */
+    top: 50%;
   }
   
   .carousel-arrow:hover {
@@ -84,6 +84,8 @@
     opacity: 1; /* Active item is fully visible */
   }
   
+  .technologies-carousel h3 {
+  font-size: 2rem;}
   .carousel-item:not(.active) {
     opacity: 0.5; /* Non-active items are slightly faded */
   }
@@ -103,12 +105,51 @@
 @media (max-width: 768px) {
   .carousel-wrapper {
     max-width: 768px;}
+    .technologies-carousel h3 {
+      font-size: 1.7rem; /* Smaller header */
+    }
+  
+    .carousel-item {
+      width: 130px; /* Smaller items */
+    }
+  
+  
+    .carousel-item p {
+      font-size: 25px; /* Smaller text */
+    }
+    
+  .carousel-arrow {
+    font-size: 18px;
+    padding: 4px;
+    top: 45%;
+  }
   
 }
 
 @media (max-width: 480px) {
   .carousel-wrapper {
     max-width: 470px;}
- 
+    .technologies-carousel h3 {
+      font-size: 1.5rem; /* Even smaller header */
+    }
+  
+    .carousel-item {
+      width: 120px;
+    }
+  
+    .carousel-item img {
+      width: 90px;
+    }
+  
+    .carousel-item p {
+      font-size: 20px;
+
+    }
+    
+  .carousel-arrow {
+    font-size: 16px;
+    padding: 2px;
+    top: 40%;
+  }
 
 }
