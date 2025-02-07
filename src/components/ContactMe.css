@@ -1,0 +1,67 @@
+.contact-container {
+    width: 90%;
+    margin: 50px auto;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.contact-container.animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.contact-heading {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 50px;
+    color: #ccc;
+}
+
+.contact-info {
+    display: flex;  
+    align-items: center;     
+    justify-content: center; 
+    gap: 20px;  /* Adds space between each contact pair */
+}
+
+.contact-pair {
+    display: flex;
+    align-items: center; 
+    width: 100%;
+    gap: 10px;
+    flex-direction: column;  /* Make the contact items appear one below the other */
+}
+
+.contact-item {
+    display: flex;
+    text-align: left;
+    gap: 10px;
+    font-size: 18px;
+    color: #777;
+    transition: transform 0.3s ease-in-out;
+    flex: 1;
+}
+
+.contact-item:hover {
+    color: #efa3c5;
+}
+
+.contact-item img {
+    width: 25px;
+    height: 25px;
+}
+
+.contact-item a {
+    text-decoration: none;
+    color: inherit;
+    font-weight: 500;
+}
+
+.contact-item a:hover {
+    color: #efa3c5;
+}

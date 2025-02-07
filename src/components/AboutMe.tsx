@@ -22,7 +22,7 @@ const AboutMe: React.FC = () => {
         });
       },
       {
-        threshold: 0.5, // Trigger when 50% of the element is visible
+        threshold: 0.2, // Trigger when 50% of the element is visible
       }
     );
 

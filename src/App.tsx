@@ -1,9 +1,12 @@
 import React from "react";
 import "./App.css";
 import AboutMe from "./components/AboutMe";
+import Experience from "./components/Experience";
 import Home from "./components/Home";
 import Navbar from "./components/Navbar";
+import Projects from "./components/Projects";
 import TechnologiesCarousel from "./components/TechnologiesCarousel";
+import ContactMe from "./components/ContactMe";
 const App: React.FC = () => {
    /*useEffect(() => {
    const handleContextMenu = (event: MouseEvent) => {
@@ -31,14 +34,13 @@ const App: React.FC = () => {
         <TechnologiesCarousel />
       </section>
       <section id="projects" className="section">
-        Projects Section
-        <img src="src\cursor (1).png" alt="About Me" />
+        <Projects/>
       </section>
       <section id="experience" className="section">
-        Experience Section
+        <Experience/>
       </section>
       <section id="contact" className="section">
-        Contact Me Section
+        <ContactMe/>
       </section>
     </div>
   );

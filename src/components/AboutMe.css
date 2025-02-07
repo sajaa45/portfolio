@@ -9,9 +9,9 @@
     margin: 0 auto; /* Center the container */
 }
 .star-image {
-    width: 40px; /* Adjust the size of the star image */
-    height: 40px; /* Maintain aspect ratio */
-    animation: pulse2 1.5s infinite; 
+    width: 30px; /* Adjust the size of the star image */
+    height: 30px; /* Maintain aspect ratio */
+    animation: pulse2 1.8s infinite; 
 }
 
 .description {
