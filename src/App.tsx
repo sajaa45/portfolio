@@ -1,14 +1,14 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./App.css";
 import AboutMe from "./components/AboutMe";
+import ContactMe from "./components/ContactMe";
 import Experience from "./components/Experience";
 import Home from "./components/Home";
 import Navbar from "./components/Navbar";
 import Projects from "./components/Projects";
 import TechnologiesCarousel from "./components/TechnologiesCarousel";
-import ContactMe from "./components/ContactMe";
 const App: React.FC = () => {
-   /*useEffect(() => {
+   useEffect(() => {
    const handleContextMenu = (event: MouseEvent) => {
       event.preventDefault(); // Prevent the context menu from appearing
     };
@@ -20,7 +20,7 @@ const App: React.FC = () => {
     return () => {
       document.removeEventListener("contextmenu", handleContextMenu);
     };
-  }, []);*/
+  }, []);
   return (
     <div className="App">
       <Navbar />

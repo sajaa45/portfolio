@@ -3,61 +3,6 @@
     padding: 2rem 0;
     position: relative;
     width: 70%;
-}
-
-
-/* Vertical Line for Timeline */
-.experience-container::before {
-    content: '';
-    position: absolute;
-    left: 20px;
-    top: 0;
-    width: 3px;
-    height: 100%;
-    background: #efa3c5; 
-}
-
-
-/* Timeline Dots */
-.experience-item {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    position: relative;
-    padding: 1.5rem;
-    padding-left: 50px; /* Offset to align with timeline */
-    margin-bottom: 2rem;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px #90186E;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.experience-item::before {
-    content: '';
-    position: absolute;
-    left: 10px;
-    top: 20px;
-    width: 14px;
-    height: 14px;
-    background: #efa3c5; /* Timeline point */
-    border: 3px solid #90186E;
-    border-radius: 50%;
-    box-shadow: 0 0 4px #90186E;
-}
-
-/* Hover Effects */
-.experience-item:hover {
-    box-shadow: 0 6px 12px #90186E;
-}
-
-.experience-header {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    align-items: left;
-    
-}
-.experience-container {
     opacity: 0;
     transform: translateY(50px);
     transition: opacity 0.6s ease-out, transform 0.6s ease-out;
@@ -68,7 +13,29 @@
     transform: translateY(0);
   }
   
+  /* Vertical Line for Timeline */
+  .experience-container::before {
+    content: '';
+    position: absolute;
+    left: 20px;
+    top: 0;
+    width: 3px;
+    height: 100%;
+    background: #efa3c5;
+  }
+  
+  /* Timeline Dots */
   .experience-item {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: relative;
+    padding: 1.5rem;
+    padding-left: 50px; /* Offset to align with timeline */
+    margin-bottom: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px #90186e;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     opacity: 0;
     transform: translateY(30px);
     transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
@@ -84,77 +51,237 @@
     transform: translateY(30px);
   }
   
-.experience-header .company{
+  .experience-item::before {
+    content: '';
+    position: absolute;
+    left: 10px;
+    top: 20px;
+    width: 14px;
+    height: 14px;
+    background: #efa3c5;
+    border: 3px solid #90186e;
+    border-radius: 50%;
+    box-shadow: 0 0 4px #90186e;
+  }
+  
+  /* Hover Effects */
+  .experience-item:hover {
+    box-shadow: 0 6px 12px #90186e;
+  }
+  
+  .experience-header {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: flex-start;
+  }
+  
+  .experience-header .company {
     font-size: 1.2rem;
-    color:#e0c8d3;
-}
-
-.experience-item h3 {
+    color: #e0c8d3;
+  }
+  
+  .experience-item h3 {
     margin-top: 0;
     margin-bottom: 0.5rem;
     font-size: 1.8rem;
-    color: #ccc; /* Darker text for readability */
-}
-
-.duration {
+    color: #ccc;
+  }
+  
+  .duration {
     text-align: right;
     font-size: 1rem;
     font-weight: bold;
     color: #777;
-}
-
-.experience-item p {
+  }
+  
+  .experience-item p {
     margin: 0.25rem 0;
     font-size: 1rem;
     color: #ccc;
-}
-
-.heading {
+  }
+  
+  .heading {
     font-weight: bold;
     color: #ccc;
     text-align: left;
     margin-bottom: 2rem;
-}
-
-.experience-item ul {
+  }
+  
+  .experience-item ul {
     margin: 0.75rem 0;
     color: #ccc;
-}
-
-.experience-item ul li {
+  }
+  
+  .experience-item ul li {
     margin-bottom: 0.5rem;
     line-height: 1.6;
-}
-
-/* View Project Link Styling */
-.experience-footer {
+  }
+  
+  /* View Project Link Styling */
+  .experience-footer {
     display: flex;
     justify-content: flex-end;
     width: 100%;
     margin-top: 10px;
-}
-
-.experience-item a {
+  }
+  
+  .experience-item a {
     color: #efa3c5;
     text-decoration: none;
     font-weight: 500;
     transition: color 0.3s ease;
-}
-
-.experience-item a:hover {
+  }
+  
+  .experience-item a:hover {
     color: #d87fa0;
-}
-
-/* Optional: Underline Animation */
-.experience-item a::after {
+  }
+  
+  /* Optional: Underline Animation */
+  .experience-item a::after {
     content: '';
     display: block;
     width: 0;
     height: 1px;
     background: #d87fa0;
     transition: width 0.3s ease;
-}
-
-.experience-item a:hover::after {
+  }
+  
+  .experience-item a:hover::after {
     width: 100%;
-}
+  }
+  
+  /* Media Queries for Responsiveness */
+  
+  /* For screens up to 1200px */
+  @media (max-width: 1200px) {
+    .experience-container {
+      width: 80%;
+    }
+  
+    .experience-item {
+      padding-left: 40px;
+    }
+  
+    .experience-item::before {
+      left: 8px;
+      top: 18px;
+      width: 12px;
+      height: 12px;
+    }
+  
+    .experience-item h3 {
+      font-size: 1.6rem;
+    }
+  
+    .experience-header .company {
+      font-size: 1.1rem;
+    }
+  
+    .duration {
+      font-size: 0.9rem;
+    }
+  
+    .experience-item p {
+      font-size: 0.9rem;
+    }
+  
+    .experience-item ul li {
+      font-size: 0.9rem;
+      text-align: left;
+    }
+  }
+  
+  /* For screens up to 768px */
+  @media (max-width: 768px) {
+    .experience-container {
+      width: 90%;
+      padding: 1.5rem 0;
+    }
+  
+    .experience-item {
+      padding-left: 30px;
+      padding: 1.2rem;
+      padding-left: 40px;
+    }
+  
+    .experience-item::before {
+      left: 6px;
+      top: 16px;
+      width: 10px;
+      height: 10px;
+    }
+  
+    .experience-item h3 {
+      font-size: 1.4rem;
+    }
+  
+    .experience-header .company {
+      font-size: 1rem;
+    }
+  
+    .duration {
+      font-size: 0.85rem;
+    }
+  
+    .experience-item p {
+      font-size: 0.85rem;
+    }
+  
+    .experience-item ul li {
+      font-size: 0.85rem;
+    }
+  
+    .heading {
+      font-size: 1.6rem;
+    }
+  }
+  
+  /* For screens up to 480px */
+  @media (max-width: 480px) {
+    .experience-container {
+      width: 95%;
+      padding: 1rem 0;
+    }
+  
+    .experience-item {
+      padding-left: 20px;
+      padding: 1rem;
+      padding-left: 30px;
+    }
+  
+    .experience-item::before {
+      left: 4px;
+      top: 14px;
+      width: 8px;
+      height: 8px;
+    }
+  
+    .experience-item h3 {
+      font-size: 1.2rem;
+    }
+  
+    .experience-header .company {
+      font-size: 0.9rem;
+    }
+  
+    .duration {
+      font-size: 0.8rem;
+    }
+  
+    .experience-item p {
+      font-size: 0.8rem;
+    }
+  
+    .experience-item ul li {
+      font-size: 0.8rem;
+    }
+  
+    .heading {
+      font-size: 1.4rem;
+    }
+  
+    .experience-item a {
+      font-size: 0.9rem;
+    }
+  }

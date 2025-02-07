@@ -4,10 +4,10 @@
     align-items: center;
     flex-wrap: wrap; /* Allow wrapping for smaller screens */
     width: 100%; /* Ensure it takes full width */
-    max-width: 1200px; /* Optional: Set a max width for larger screens */
-    height: 100vh;
-    margin: 0 auto; /* Center the container */
+    box-sizing: border-box;
+    margin: 0;
 }
+
 .star-image {
     width: 30px; /* Adjust the size of the star image */
     height: 30px; /* Maintain aspect ratio */
@@ -134,7 +134,6 @@ body {
 
 /* Responsive styles */
 @media (max-width: 1200px) {
-
     .description {
         margin-right: 0; /* Remove right margin */
         text-align: center; /* Center text */
@@ -153,17 +152,16 @@ body {
 }
 
 @media (max-width: 768px) {
-
     .border-wrapper {
-        margin-top: 20px;/* Adjust width for smaller screens */
+        margin-top: 20px; /* Adjust width for smaller screens */
         max-width: 280px; 
         max-height: 280px; 
     }
 
     .about-me-container .description p {
-        margin: 0 10px;
         text-align: center;
         font-size: 18px; /* Adjust font size */
+        padding: 0 15px; 
     }
 }
 
@@ -171,6 +169,7 @@ body {
     .about-me-container {
         flex-direction: column; /* Stack items vertically */
         align-items: center; /* Center items */
+        padding: 10px; /* Reduce padding for smaller screens */
     }
 
     .border-wrapper {
@@ -181,7 +180,7 @@ body {
         height: 225px;
     }
 
-    .about-me-container .description p , .about-me-container .description p{
+    .about-me-container .description p {
         text-align: center;
         margin: 10px 20px;
         font-size: 16px; /* Adjust font size */

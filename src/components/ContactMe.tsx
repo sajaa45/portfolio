@@ -69,7 +69,7 @@ const ContactMe = () => {
         <div className="contact-pair">
           <div className="contact-item">
             <img src="icons/phone-call.png" alt="Phone" />
-            <span>+94867547</span>
+            <span>+21694867547</span>
           </div>
           <div className="contact-item">
             <img src="icons/maps-and-flags.png" alt="Location" />
