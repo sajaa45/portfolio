@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import ReactGA from 'react-ga';
 import "./App.css";
 import AboutMe from "./components/AboutMe";
 import ContactMe from "./components/ContactMe";
@@ -7,9 +8,14 @@ import Home from "./components/Home";
 import Navbar from "./components/Navbar";
 import Projects from "./components/Projects";
 import TechnologiesCarousel from "./components/TechnologiesCarousel";
+
+const TRACKING_ID = 'G-10238606668'; // Replace with your tracking ID
+ReactGA.initialize(TRACKING_ID);
+ReactGA.pageview(window.location.pathname + window.location.search);
+
 const App: React.FC = () => {
-   useEffect(() => {
-   const handleContextMenu = (event: MouseEvent) => {
+  useEffect(() => {
+    const handleContextMenu = (event: MouseEvent) => {
       event.preventDefault(); // Prevent the context menu from appearing
     };
 
@@ -21,11 +27,12 @@ const App: React.FC = () => {
       document.removeEventListener("contextmenu", handleContextMenu);
     };
   }, []);
+
   return (
     <div className="App">
       <Navbar />
       <section id="home" className="section">
-        <Home rows={7}  />
+        <Home rows={7} />
       </section>
       <section id="about" className="section">
         <AboutMe />
@@ -34,13 +41,13 @@ const App: React.FC = () => {
         <TechnologiesCarousel />
       </section>
       <section id="projects" className="section">
-        <Projects/>
+        <Projects />
       </section>
       <section id="experience" className="section">
-        <Experience/>
+        <Experience />
       </section>
       <section id="contact" className="section">
-        <ContactMe/>
+        <ContactMe />
       </section>
     </div>
   );
