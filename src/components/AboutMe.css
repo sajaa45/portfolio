@@ -4,8 +4,8 @@
     align-items: center;
     flex-wrap: wrap; /* Allow wrapping for smaller screens */
     width: 100%; /* Ensure it takes full width */
-    box-sizing: border-box;
-    margin: 0;
+    max-width: 1200px; /* Optional: Set a max width for larger screens */
+    margin: 50px auto; /* Center the container */
 }
 
 .star-image {
@@ -16,7 +16,6 @@
 
 .description {
     color: #ccc;
-    margin-right: 50px;
     opacity: 0; /* Start hidden */
     transform: translateX(-100%); /* Start off-screen */
     transition: opacity 0.8s ease, transform 0.8s ease;
@@ -62,10 +61,6 @@
 .about-me-container .description p {
     font-size: 23px;
     text-align: left;
-}
-
-.about-me-container .description button {
-    margin-left: 0; /* Adjust margin for button */
 }
 
 .about-me-container .description h2 {
