@@ -14,9 +14,11 @@ const technologies = [
   { name: "HTML", image: "tools/html.png" },
   { name: "Docker", image: "tools/docker-svgrepo-com.png" },
   { name: "Linux", image: "tools/linux-svgrepo-com.png" },
+  { name: "TypeScript", image: "tools/typescript-programming-language-icon.png" },
   { name: "Jupyter", image: "tools/jupyter-svgrepo-com.png" },
   { name: "MySQL", image: "tools/mysql-logo-svgrepo-com.png" },
-  { name: "MongoDB", image: "tools/mongo-svgrepo-com.png" }
+  { name: "MongoDB", image: "tools/mongo-svgrepo-com.png" },
+  { name: "C", image: "tools/c-program-icon.png" }
   // Add more technologies as needed
 ];
 
